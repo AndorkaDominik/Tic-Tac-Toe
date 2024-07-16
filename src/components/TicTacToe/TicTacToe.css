@@ -17,23 +17,23 @@
 }
 
 .reset{
-    width: 250px;
-    height: 100px;
+    height: 70px;
     border: none;
     outline: none;
     cursor: pointer;
     border-radius: 50px;
     background: #1f3540;
-    font-size: 26px;
+    font-size: 1.3rem;
     color: #26ffcb;
     margin-top: 25px;
     margin-bottom: 50px;
+    padding: 0 30px;
 }
 
 .boxes{
     display: flex;
-    height: 180px;
-    width: 180px;
+    height: 150px;
+    width: 150px;
     background: #1f3540;
     border: 4px solid #0f1b21;
     border-radius: 12px;
@@ -41,10 +41,11 @@
 }
 
 .board{
-    height: 600px;
-    width: 564px;
+    height: 450px;
+    width: 450px;
     display: flex;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .boxes img{
@@ -54,4 +55,75 @@
 .title img{
     padding: 20px;
     height: 50px;
+}
+
+.name-entry-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+}
+
+.name-entry-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.name-entry-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f3540;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.name-entry-container label {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.name-entry-container input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    overflow: hidden;
+}
+
+.name-entry-container button {
+    margin-top: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.name-entry-container button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.name-entry-container button[type="button"] {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+/* Adjustments for the game title after winning */
+.title img {
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+
+.button-container {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+    justify-content: center;
 }
