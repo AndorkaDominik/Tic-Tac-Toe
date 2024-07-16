@@ -48,7 +48,7 @@
 }
 
 .boxes img{
-    margin: 50px;
+    margin: 35px;
 }
 
 .title img{
@@ -121,7 +121,6 @@
     border: none;
 }
 
-/* Adjustments for the game title after winning */
 .title img {
     vertical-align: middle;
     margin-left: 0.5rem;
@@ -148,6 +147,10 @@
         height: 100px;
         width: 100px;
         margin: 5px;
+    }
+
+    .boxes img {
+        margin: 20px;
     }
 
     .reset {
@@ -210,7 +213,7 @@
 
 @media (max-width: 280px) {
     .title {
-            font-size: 19px;
+        font-size: 19px;
     }
 
     .board{
@@ -221,6 +224,10 @@
         height: 60px;
         width: 60px;
         margin: 2px;
+    }
+
+    .boxes img {
+        margin: 10px;
     }
 
     .reset {
