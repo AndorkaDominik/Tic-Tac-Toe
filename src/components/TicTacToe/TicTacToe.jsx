@@ -112,11 +112,11 @@ const TicTacToe = () => {
                 <h1>Enter Player Names</h1>
                 <form onSubmit={handleNameSubmit}>
                     <label>
-                        Player X:
+                        <span>Enter First Player Name:</span>
                         <input type="text" name="playerX" placeholder="Player X" required />
                     </label>
                     <label>
-                        Player O:
+                        <span>Enter First Player Name:</span> 
                         <input type="text" name="playerO" placeholder="Player O" required />
                     </label>
                     <div className="button-container">
