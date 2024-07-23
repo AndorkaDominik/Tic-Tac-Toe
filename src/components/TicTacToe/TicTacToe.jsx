@@ -14,6 +14,7 @@ const TicTacToe = () => {
     let [lock, setLock] = useState(false);
     let [playerNames, setPlayerNames] = useState({ x: '', o: '' });
     let [playersEntered, setPlayersEntered] = useState(false);
+    let [showCard, setShowCard] = useState(false);
     let titleRef = useRef(null);
 
     let box1 = useRef(null);
@@ -47,7 +48,7 @@ const TicTacToe = () => {
             e.target.innerHTML = `<img src='${circle_icon}' alt='o' />`
             data[num] = "o";
             setCount(count + 1);
-        }
+        } 
         checkWin();
     }
 
@@ -68,6 +69,8 @@ const TicTacToe = () => {
             won(data[8]);
         } else if (data[2] === data[4] && data[4] === data[6] && data[6] !== "") {
             won(data[6]);
+        } else if (count === 8) {
+            setShowCard(true);
         }
     }
 
@@ -96,6 +99,7 @@ const TicTacToe = () => {
             e.current.innerHTML = "";
         });
         setCount(0);
+        setShowCard(false);
     }
 
     const handleNameSubmit = (e) => {
@@ -129,29 +133,40 @@ const TicTacToe = () => {
     }
 
     return (
-        <div className='container'>
-            <h1 className="title" ref={titleRef}>TicTacToe Game in<span>React</span></h1>
-            <div className="board">
-                <div className="row1">
-                    <div className="boxes" ref={box1} onClick={(e) => { toggle(e, 0) }}></div>
-                    <div className="boxes" ref={box2} onClick={(e) => { toggle(e, 1) }}></div>
-                    <div className="boxes" ref={box3} onClick={(e) => { toggle(e, 2) }}></div>
+        <>
+            <div className={showCard ? "overlay" : ""}></div>
+            <div className='container'>
+                <h1 className="title" ref={titleRef}>TicTacToe Game in<span>React</span></h1>
+                <div className="board">
+                    <div className="row1">
+                        <div className="boxes" ref={box1} onClick={(e) => { toggle(e, 0) }}></div>
+                        <div className="boxes" ref={box2} onClick={(e) => { toggle(e, 1) }}></div>
+                        <div className="boxes" ref={box3} onClick={(e) => { toggle(e, 2) }}></div>
+                    </div>
+                    <div className="row2">
+                        <div className="boxes" ref={box4} onClick={(e) => { toggle(e, 3) }}></div>
+                        <div className="boxes" ref={box5} onClick={(e) => { toggle(e, 4) }}></div>
+                        <div className="boxes" ref={box6} onClick={(e) => { toggle(e, 5) }}></div>
+                    </div>
+                    <div className="row3">
+                        <div className="boxes" ref={box7} onClick={(e) => { toggle(e, 6) }}></div>
+                        <div className="boxes" ref={box8} onClick={(e) => { toggle(e, 7) }}></div>
+                        <div className="boxes" ref={box9} onClick={(e) => { toggle(e, 8) }}></div>
+                    </div>
+                    {showCard && (
+                        <>
+                            <div className="card">
+                                <h2>It's a <span>Tie!</span></h2>
+                                <button onClick={reset}>Play Again</button>
+                            </div>
+                        </>
+                    )}
                 </div>
-                <div className="row2">
-                    <div className="boxes" ref={box4} onClick={(e) => { toggle(e, 3) }}></div>
-                    <div className="boxes" ref={box5} onClick={(e) => { toggle(e, 4) }}></div>
-                    <div className="boxes" ref={box6} onClick={(e) => { toggle(e, 5) }}></div>
-                </div>
-                <div className="row3">
-                    <div className="boxes" ref={box7} onClick={(e) => { toggle(e, 6) }}></div>
-                    <div className="boxes" ref={box8} onClick={(e) => { toggle(e, 7) }}></div>
-                    <div className="boxes" ref={box9} onClick={(e) => { toggle(e, 8) }}></div>
+                <div className="button-container">
+                <button className="reset" onClick={() => { reset() }}>Reset</button>
                 </div>
             </div>
-            <div className="button-container">
-            <button className="reset" onClick={() => { reset() }}>Reset</button>
-            </div>
-        </div>
+        </>
     )
 }
 
