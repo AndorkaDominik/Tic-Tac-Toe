@@ -156,7 +156,7 @@ const TicTacToe = () => {
                     {showCard && (
                         <>
                             <div className="card">
-                                <h2>It's a <span>Tie!</span></h2>
+                                <h2>It's a <span>Tieeee!</span></h2>
                                 <button onClick={reset}>Play Again</button>
                             </div>
                         </>

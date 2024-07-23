@@ -32,6 +32,10 @@ Once both players have entered their names and clicked on "Start Game" or "Skip"
 
 ![Enter Player Names Preview](./.github/enternames.png)
 
+### Tie Game
+
+If the game ends in a tie, an overlay appears to fade the background and a card is displayed with a message indicating that the game is a tie. Players can then click the "Play Again" button on the card to reset the game and start a new match. This ensures a smooth user experience and clear communication when the game ends in a draw.
+
 ## Technologies Used
 
 - React
