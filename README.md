@@ -35,5 +35,5 @@ Once both players have entered their names and clicked on "Start Game" or "Skip"
 ## Technologies Used
 
 - React
-- JavaScript (ES6)
-- CSS (for styling)
+- JavaScript
+- CSS
